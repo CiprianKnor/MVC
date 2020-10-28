@@ -13,8 +13,16 @@ class User
     {
         return User::USERS;
     }
-    public function find($id)
+    public static function find($id)
     {
-        return User::USERS[$id];
+
+        foreach(User::USERS as $key => $user){
+            if($user[0] == $id){
+                return $user;
+            }
+        }
+
+
+        return null;
     }
 }

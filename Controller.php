@@ -12,10 +12,9 @@ class Controller
     public function show()
     {
         $id = $_GET['id'];
-        echo $id;
-        return;
         $user = User::find($id);
         // echo json_encode($user);
         require('views/show.php');
+        return;
     }
 }
